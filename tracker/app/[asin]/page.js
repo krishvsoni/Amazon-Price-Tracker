@@ -2,7 +2,6 @@ import React from "react";
 import { Chart } from "react-charts";
 import Navbar from "../../components/Navbar";
 import DisplayChart from "../../components/DisplayChart";
-
 export default function Page({params}){
     const data = [
         {

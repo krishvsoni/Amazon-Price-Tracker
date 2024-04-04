@@ -20,7 +20,7 @@ export default async function Home() {
       <>
         <Navbar/>
         <div className="container mx-auto">
-          <h1 className="text-center font-bold text-2xl py-16"> Welcome To Amazon Price Tracker</h1>
+          <h1 className="text-center font-bold text-2xl py-16"> Products Fetched</h1>
           <ul className="list-disc">
             {findResult.map(item => (
               <li key={item._id} className="mb-4">
