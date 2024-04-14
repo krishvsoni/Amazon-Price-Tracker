@@ -1,19 +1,22 @@
-'use client';
-import React, { useState, useEffect } from "react";
+// import React, { useState, useEffect } from "react";
 import Navbar from "../../components/Navbar";
-import DisplayChart from "../../components/DisplayChart";
+import dynamic from 'next/dynamic';
+const DisplayChart = dynamic(() => import("../../components/DisplayChart"), { ssr: false });
 import MongoClient from 'mongodb';
+import fs from "fs"; 
+import { ClientEncryption } from "mongodb";
+import { useClient } from 'next/client';
 
 let client;
+
 if (typeof window === 'undefined') {
   const url = process.env.MongoDB;
   client = new MongoClient(url);
 }
 
-
 const dbName = 'amazon_data';
 
-export default async function Page({ params }) {
+export default useClient(function Page({ params }) {
   const [chartData, setChartData] = useState([]);
 
   useEffect(() => {
@@ -72,4 +75,4 @@ export default async function Page({ params }) {
       <DisplayChart data={chartData} />
     </>
   );
-}
+});
