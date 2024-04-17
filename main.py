@@ -12,6 +12,7 @@ load_dotenv()
 def get_data():
     options = Options()
     options.add_argument('--headless')
+# Remove --headless for page view of data
     api_key = os.getenv('API_KEY')
     scraperapi_url = f'http://api.scraperapi.com/?api_key={api_key}&url='
     user_agent = os.getenv('user_agent')
