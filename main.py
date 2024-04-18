@@ -25,7 +25,7 @@ def get_data():
     for product in products:
         product = product.strip()  
         url = scraperapi_url + product
-        driver.get(f'https://www.amazon.in/dp/{product}')
+        # For Amazon India Only  driver.get(f'https://www.amazon.in/dp/{product}')
         page_source = driver.page_source
 
         with open(f'data/{product}.html', 'w', encoding='utf-8') as f:
