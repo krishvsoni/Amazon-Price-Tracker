@@ -1,6 +1,7 @@
 import React from "react";
 import { Line } from "react-chartjs-2";
 
+
 const DisplayChart = ({ data, title }) => {
   const chartData = {
     labels: data.map(entry => entry.date),
